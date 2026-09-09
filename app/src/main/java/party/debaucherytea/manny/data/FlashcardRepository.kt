@@ -6,7 +6,14 @@ import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
 
-data class Flashcard(val id: String, val sectionId: String, val hanzi: String, val pinyin: String, val english: String)
+data class Flashcard(
+    val id: String,
+    val sectionId: String,
+    val hanzi: String,
+    val pinyin: String,
+    val english: String,
+    val audioPath: String? = null
+)
 data class FlashcardSection(val id: String, val title: String, val cards: List<Flashcard>)
 
 class FlashcardRepository(private val assets: AssetManager) {
@@ -29,12 +36,26 @@ fun parseSections(json: String): List<FlashcardSection> {
             val cardId = card.requiredText("id")
             require(cardIds.add(cardId)) { "Duplicate card: $cardId" }
             require(card.requiredText("sectionId") == id) { "Card section mismatch: $cardId" }
-            Flashcard(cardId, id, card.requiredText("hanzi"), card.requiredText("pinyin"), card.requiredText("english"))
+            Flashcard(
+                cardId,
+                id,
+                card.requiredText("hanzi"),
+                card.requiredText("pinyin"),
+                card.requiredText("english"),
+                card.optionalText("audioPath")
+            )
         })
     }
 }
 
 private fun JSONObject.requiredText(key: String): String {
+    val value = get(key)
+    require(value is String && value.isNotBlank()) { "Missing or invalid $key" }
+    return value
+}
+
+private fun JSONObject.optionalText(key: String): String? {
+    if (!has(key) || isNull(key)) return null
     val value = get(key)
     require(value is String && value.isNotBlank()) { "Missing or invalid $key" }
     return value

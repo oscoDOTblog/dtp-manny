@@ -11,6 +11,10 @@ Kotlin, Jetpack Compose, and Material 3.
 - `data/FlashcardRepository.kt` loads and validates UTF-8 JSON on the IO dispatcher.
 - `ui/` contains Navigation Compose routing, the section list, card navigation,
   and a reusable animated flashcard. Loading failures offer a retry.
+- `audio/` defines the PronunciationPlayer abstraction with an asset-backed
+  MediaPlayer implementation. The flashcard 🔊 button plays `audioPath` when
+  present and stays disabled otherwise; playback stops when leaving a section
+  and resources are released with the Activity.
 - `app/src/main/assets/vocabulary.json` contains 40 radicals, 10 numbers, and 3
   animals. Parenthesized radical variants are retained in the Hanzi field.
 - Cards begin with a shared vector illustration (except 人, which uses a bundled

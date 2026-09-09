@@ -10,6 +10,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.*
 import party.debaucherytea.manny.R
+import party.debaucherytea.manny.audio.PronunciationPlayer
 import party.debaucherytea.manny.data.*
 import java.io.IOException
 import org.json.JSONException
@@ -21,7 +22,7 @@ private sealed interface LibraryState {
 }
 
 @Composable
-fun MannyApp(repository: FlashcardRepository) {
+fun MannyApp(repository: FlashcardRepository, player: PronunciationPlayer) {
     var attempt by remember { mutableIntStateOf(0) }
     val state by produceState<LibraryState>(LibraryState.Loading, repository, attempt) {
         value = LibraryState.Loading
@@ -49,13 +50,13 @@ fun MannyApp(repository: FlashcardRepository) {
                 Text(stringResource(R.string.load_error))
                 Button(onClick = { attempt++ }) { Text(stringResource(R.string.retry)) }
             }
-            is LibraryState.Ready -> LibraryNavigation(current.sections)
+            is LibraryState.Ready -> LibraryNavigation(current.sections, player)
         }
     }
 }
 
 @Composable
-private fun LibraryNavigation(sections: List<FlashcardSection>) {
+private fun LibraryNavigation(sections: List<FlashcardSection>, player: PronunciationPlayer) {
     val navController = rememberNavController()
     NavHost(navController, startDestination = "sections") {
         composable("sections") {
@@ -65,7 +66,7 @@ private fun LibraryNavigation(sections: List<FlashcardSection>) {
         }
         composable("cards/{sectionId}") { entry ->
             val section = sections.find { it.id == entry.arguments?.getString("sectionId") }
-            FlashcardScreen(section, onBack = { navController.popBackStack() })
+            FlashcardScreen(section, player, onBack = { navController.popBackStack() })
         }
     }
 }

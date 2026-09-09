@@ -10,19 +10,31 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
 import party.debaucherytea.manny.R
+import party.debaucherytea.manny.audio.PronunciationPlayer
 import party.debaucherytea.manny.data.FlashcardSection
+import java.io.IOException
 
 @Composable
-fun FlashcardScreen(section: FlashcardSection?, onBack: () -> Unit) {
+fun FlashcardScreen(section: FlashcardSection?, player: PronunciationPlayer, onBack: () -> Unit) {
     val cardCount = section?.cards?.size ?: 0
     var index by rememberSaveable(section?.id) { mutableIntStateOf(0) }
     var order by rememberSaveable(section?.id) { mutableStateOf((0 until cardCount).toList()) }
-    Column(
-        modifier = Modifier.fillMaxSize().safeDrawingPadding().verticalScroll(rememberScrollState()).padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(20.dp)
-    ) {
+    val scope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
+    val audioErrorMessage = stringResource(R.string.audio_error)
+    // Leaving the section ends playback; a new section starts silent.
+    DisposableEffect(section?.id) {
+        onDispose { player.stop() }
+    }
+    Scaffold(snackbarHost = { SnackbarHost(snackbarHostState) }) { innerPadding ->
+        Column(
+            modifier = Modifier.fillMaxSize().safeDrawingPadding().padding(innerPadding)
+                .verticalScroll(rememberScrollState()).padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(20.dp)
+        ) {
         TextButton(onClick = onBack, modifier = Modifier.align(Alignment.Start)) { Text(stringResource(R.string.back)) }
         Text(section?.title.orEmpty(), style = MaterialTheme.typography.headlineMedium)
         if (section == null || section.cards.isEmpty()) {
@@ -50,7 +62,22 @@ fun FlashcardScreen(section: FlashcardSection?, onBack: () -> Unit) {
             }
             LinearProgressIndicator(progress = { (safeIndex + 1).toFloat() / section.cards.size }, modifier = Modifier.fillMaxWidth())
             // A new card always begins on its image side with the meaning hidden.
-            key(card.id) { FlashcardFace(card) }
+            key(card.id) {
+                FlashcardFace(
+                    card = card,
+                    onPlayAudio = card.audioPath?.let { path ->
+                        {
+                            scope.launch {
+                                try {
+                                    player.play(path)
+                                } catch (_: IOException) {
+                                    snackbarHostState.showSnackbar(audioErrorMessage)
+                                }
+                            }
+                        }
+                    }
+                )
+            }
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                 OutlinedButton(onClick = { index = safeIndex - 1 }, enabled = safeIndex > 0, modifier = Modifier.weight(1f)) {
                     Text(stringResource(R.string.previous))
@@ -59,6 +86,7 @@ fun FlashcardScreen(section: FlashcardSection?, onBack: () -> Unit) {
                     Text(stringResource(R.string.next))
                 }
             }
+        }
         }
     }
 }

@@ -25,7 +25,7 @@ import party.debaucherytea.manny.R
 import party.debaucherytea.manny.data.Flashcard
 
 @Composable
-fun FlashcardFace(card: Flashcard) {
+fun FlashcardFace(card: Flashcard, onPlayAudio: (() -> Unit)?) {
     var flipped by rememberSaveable(card.id) { mutableStateOf(false) }
     var showInfo by rememberSaveable(card.id) { mutableStateOf(false) }
     val angle by animateFloatAsState(if (flipped) 180f else 0f, tween(360), label = "cardFlip")
@@ -63,8 +63,14 @@ fun FlashcardFace(card: Flashcard) {
                     TextButton(onClick = { showInfo = !showInfo }) {
                         Text(stringResource(if (showInfo) R.string.hide_info else R.string.show_info))
                     }
-                    val audioDescription = stringResource(R.string.audio_unavailable)
-                    OutlinedButton(onClick = {}, enabled = false, modifier = Modifier.semantics { contentDescription = audioDescription }) {
+                    val audioDescription = stringResource(
+                        if (onPlayAudio != null) R.string.play_pronunciation else R.string.audio_unavailable
+                    )
+                    OutlinedButton(
+                        onClick = { onPlayAudio?.invoke() },
+                        enabled = onPlayAudio != null,
+                        modifier = Modifier.semantics { contentDescription = audioDescription }
+                    ) {
                         Text(stringResource(R.string.audio))
                     }
                 }

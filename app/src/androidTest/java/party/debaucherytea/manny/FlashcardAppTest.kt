@@ -20,7 +20,7 @@ class FlashcardAppTest {
         compose.onNodeWithText("Tap to reveal").performClick()
         compose.onNodeWithText("狗").assertExists()
         compose.onNodeWithText("gǒu").assertDoesNotExist()
-        compose.onNodeWithContentDescription("Audio unavailable in V1").assertIsNotEnabled()
+        compose.onNodeWithContentDescription("Audio unavailable").assertIsNotEnabled()
         compose.onNodeWithText("Show meaning").performClick()
         compose.onNodeWithText("gǒu").assertExists()
         compose.onNodeWithText("dog").assertExists()

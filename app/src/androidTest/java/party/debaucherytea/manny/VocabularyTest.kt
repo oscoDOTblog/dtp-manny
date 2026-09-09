@@ -17,6 +17,22 @@ class VocabularyTest {
         assertEquals("mì", sections[0].cards[27].pinyin)
         assertEquals("十", sections[1].cards.last().hanzi)
         assertEquals(listOf("gǒu", "māo", "niǎo"), sections[2].cards.map { it.pinyin })
+        assertTrue(sections.flatMap { it.cards }.all { it.audioPath == null })
+    }
+
+    @Test fun audioPathIsOptional() {
+        val withAudio = """{"id":"dog","sectionId":"animals","hanzi":"狗","pinyin":"gǒu","english":"dog","audioPath":"audio/dog.mp3"}"""
+        val withoutAudio = """{"id":"cat","sectionId":"animals","hanzi":"猫","pinyin":"māo","english":"cat"}"""
+        val json = """[{"id":"animals","title":"Animals","cards":[$withAudio,$withoutAudio]}]"""
+        val cards = parseSections(json).single().cards
+        assertEquals("audio/dog.mp3", cards[0].audioPath)
+        assertNull(cards[1].audioPath)
+    }
+
+    @Test fun rejectsBlankAudioPath() {
+        val card = """{"id":"dog","sectionId":"animals","hanzi":"狗","pinyin":"gǒu","english":"dog","audioPath":" "}"""
+        val json = """[{"id":"animals","title":"Animals","cards":[$card]}]"""
+        assertThrows(IllegalArgumentException::class.java) { parseSections(json) }
     }
 
     @Test fun emptyCollectionsAreSupported() {

@@ -8,280 +8,320 @@
         "sectionId": "radicals",
         "hanzi": "人（亻）",
         "pinyin": "rén",
-        "english": "person"
+        "english": "person",
+        "audioPath": "audio/radicals-01.mp3"
       },
       {
         "id": "radicals-02",
         "sectionId": "radicals",
         "hanzi": "刀（刂）",
         "pinyin": "dāo",
-        "english": "knife"
+        "english": "knife",
+        "audioPath": "audio/radicals-02.mp3"
       },
       {
         "id": "radicals-03",
         "sectionId": "radicals",
         "hanzi": "力",
         "pinyin": "lì",
-        "english": "power"
+        "english": "power",
+        "audioPath": "audio/radicals-03.mp3"
       },
       {
         "id": "radicals-04",
         "sectionId": "radicals",
         "hanzi": "又",
         "pinyin": "yòu",
-        "english": "right hand; again"
+        "english": "right hand; again",
+        "audioPath": "audio/radicals-04.mp3"
       },
       {
         "id": "radicals-05",
         "sectionId": "radicals",
         "hanzi": "口",
         "pinyin": "kǒu",
-        "english": "mouth"
+        "english": "mouth",
+        "audioPath": "audio/radicals-05.mp3"
       },
       {
         "id": "radicals-06",
         "sectionId": "radicals",
         "hanzi": "囗",
         "pinyin": "wéi",
-        "english": "enclose"
+        "english": "enclose",
+        "audioPath": "audio/radicals-06.mp3"
       },
       {
         "id": "radicals-07",
         "sectionId": "radicals",
         "hanzi": "土",
         "pinyin": "tǔ",
-        "english": "earth"
+        "english": "earth",
+        "audioPath": "audio/radicals-07.mp3"
       },
       {
         "id": "radicals-08",
         "sectionId": "radicals",
         "hanzi": "夕",
         "pinyin": "xī",
-        "english": "sunset"
+        "english": "sunset",
+        "audioPath": "audio/radicals-08.mp3"
       },
       {
         "id": "radicals-09",
         "sectionId": "radicals",
         "hanzi": "大",
         "pinyin": "dà",
-        "english": "big"
+        "english": "big",
+        "audioPath": "audio/radicals-09.mp3"
       },
       {
         "id": "radicals-10",
         "sectionId": "radicals",
         "hanzi": "女",
         "pinyin": "nǚ",
-        "english": "woman"
+        "english": "woman",
+        "audioPath": "audio/radicals-10.mp3"
       },
       {
         "id": "radicals-11",
         "sectionId": "radicals",
         "hanzi": "子",
         "pinyin": "zǐ",
-        "english": "son"
+        "english": "son",
+        "audioPath": "audio/radicals-11.mp3"
       },
       {
         "id": "radicals-12",
         "sectionId": "radicals",
         "hanzi": "寸",
         "pinyin": "cùn",
-        "english": "inch"
+        "english": "inch",
+        "audioPath": "audio/radicals-12.mp3"
       },
       {
         "id": "radicals-13",
         "sectionId": "radicals",
         "hanzi": "小",
         "pinyin": "xiǎo",
-        "english": "small"
+        "english": "small",
+        "audioPath": "audio/radicals-13.mp3"
       },
       {
         "id": "radicals-14",
         "sectionId": "radicals",
         "hanzi": "工",
         "pinyin": "gōng",
-        "english": "labor; work"
+        "english": "labor; work",
+        "audioPath": "audio/radicals-14.mp3"
       },
       {
         "id": "radicals-15",
         "sectionId": "radicals",
         "hanzi": "幺",
         "pinyin": "yāo",
-        "english": "tiny; small"
+        "english": "tiny; small",
+        "audioPath": "audio/radicals-15.mp3"
       },
       {
         "id": "radicals-16",
         "sectionId": "radicals",
         "hanzi": "弓",
         "pinyin": "gōng",
-        "english": "bow"
+        "english": "bow",
+        "audioPath": "audio/radicals-16.mp3"
       },
       {
         "id": "radicals-17",
         "sectionId": "radicals",
         "hanzi": "心（忄）",
         "pinyin": "xīn",
-        "english": "heart"
+        "english": "heart",
+        "audioPath": "audio/radicals-17.mp3"
       },
       {
         "id": "radicals-18",
         "sectionId": "radicals",
         "hanzi": "戈",
         "pinyin": "gē",
-        "english": "dagger-axe"
+        "english": "dagger-axe",
+        "audioPath": "audio/radicals-18.mp3"
       },
       {
         "id": "radicals-19",
         "sectionId": "radicals",
         "hanzi": "手（扌）",
         "pinyin": "shǒu",
-        "english": "hand"
+        "english": "hand",
+        "audioPath": "audio/radicals-19.mp3"
       },
       {
         "id": "radicals-20",
         "sectionId": "radicals",
         "hanzi": "日",
         "pinyin": "rì",
-        "english": "sun"
+        "english": "sun",
+        "audioPath": "audio/radicals-20.mp3"
       },
       {
         "id": "radicals-21",
         "sectionId": "radicals",
         "hanzi": "月",
         "pinyin": "yuè",
-        "english": "moon"
+        "english": "moon",
+        "audioPath": "audio/radicals-21.mp3"
       },
       {
         "id": "radicals-22",
         "sectionId": "radicals",
         "hanzi": "木",
         "pinyin": "mù",
-        "english": "wood"
+        "english": "wood",
+        "audioPath": "audio/radicals-22.mp3"
       },
       {
         "id": "radicals-23",
         "sectionId": "radicals",
         "hanzi": "水（氵）",
         "pinyin": "shuǐ",
-        "english": "water"
+        "english": "water",
+        "audioPath": "audio/radicals-23.mp3"
       },
       {
         "id": "radicals-24",
         "sectionId": "radicals",
         "hanzi": "火（灬）",
         "pinyin": "huǒ",
-        "english": "fire"
+        "english": "fire",
+        "audioPath": "audio/radicals-24.mp3"
       },
       {
         "id": "radicals-25",
         "sectionId": "radicals",
         "hanzi": "田",
         "pinyin": "tián",
-        "english": "field"
+        "english": "field",
+        "audioPath": "audio/radicals-25.mp3"
       },
       {
         "id": "radicals-26",
         "sectionId": "radicals",
         "hanzi": "目",
         "pinyin": "mù",
-        "english": "eye"
+        "english": "eye",
+        "audioPath": "audio/radicals-26.mp3"
       },
       {
         "id": "radicals-27",
         "sectionId": "radicals",
         "hanzi": "示（礻）",
         "pinyin": "shì",
-        "english": "show"
+        "english": "show",
+        "audioPath": "audio/radicals-27.mp3"
       },
       {
         "id": "radicals-28",
         "sectionId": "radicals",
         "hanzi": "糸（纟）",
         "pinyin": "mì",
-        "english": "fine silk"
+        "english": "fine silk",
+        "audioPath": "audio/radicals-28.mp3"
       },
       {
         "id": "radicals-29",
         "sectionId": "radicals",
         "hanzi": "耳",
         "pinyin": "ěr",
-        "english": "ear"
+        "english": "ear",
+        "audioPath": "audio/radicals-29.mp3"
       },
       {
         "id": "radicals-30",
         "sectionId": "radicals",
         "hanzi": "衣（衤）",
         "pinyin": "yī",
-        "english": "clothing"
+        "english": "clothing",
+        "audioPath": "audio/radicals-30.mp3"
       },
       {
         "id": "radicals-31",
         "sectionId": "radicals",
         "hanzi": "言",
         "pinyin": "yán",
-        "english": "speech"
+        "english": "speech",
+        "audioPath": "audio/radicals-31.mp3"
       },
       {
         "id": "radicals-32",
         "sectionId": "radicals",
         "hanzi": "贝",
         "pinyin": "bèi",
-        "english": "cowrie shell"
+        "english": "cowrie shell",
+        "audioPath": "audio/radicals-32.mp3"
       },
       {
         "id": "radicals-33",
         "sectionId": "radicals",
         "hanzi": "走",
         "pinyin": "zǒu",
-        "english": "walk"
+        "english": "walk",
+        "audioPath": "audio/radicals-33.mp3"
       },
       {
         "id": "radicals-34",
         "sectionId": "radicals",
         "hanzi": "足",
         "pinyin": "zú",
-        "english": "foot"
+        "english": "foot",
+        "audioPath": "audio/radicals-34.mp3"
       },
       {
         "id": "radicals-35",
         "sectionId": "radicals",
         "hanzi": "钅",
         "pinyin": "jīn",
-        "english": "gold"
+        "english": "gold",
+        "audioPath": "audio/radicals-35.mp3"
       },
       {
         "id": "radicals-36",
         "sectionId": "radicals",
         "hanzi": "门",
         "pinyin": "mén",
-        "english": "door"
+        "english": "door",
+        "audioPath": "audio/radicals-36.mp3"
       },
       {
         "id": "radicals-37",
         "sectionId": "radicals",
         "hanzi": "隹",
         "pinyin": "zhuī",
-        "english": "short-tailed bird"
+        "english": "short-tailed bird",
+        "audioPath": "audio/radicals-37.mp3"
       },
       {
         "id": "radicals-38",
         "sectionId": "radicals",
         "hanzi": "雨",
         "pinyin": "yǔ",
-        "english": "rain"
+        "english": "rain",
+        "audioPath": "audio/radicals-38.mp3"
       },
       {
         "id": "radicals-39",
         "sectionId": "radicals",
         "hanzi": "饣（食）",
         "pinyin": "shí",
-        "english": "eat"
+        "english": "eat",
+        "audioPath": "audio/radicals-39.mp3"
       },
       {
         "id": "radicals-40",
         "sectionId": "radicals",
         "hanzi": "马",
         "pinyin": "mǎ",
-        "english": "horse"
+        "english": "horse",
+        "audioPath": "audio/radicals-40.mp3"
       }
     ]
   },
@@ -294,70 +334,80 @@
         "sectionId": "numbers",
         "hanzi": "一",
         "pinyin": "yī",
-        "english": "one"
+        "english": "one",
+        "audioPath": "audio/numbers-01.mp3"
       },
       {
         "id": "numbers-02",
         "sectionId": "numbers",
         "hanzi": "二",
         "pinyin": "èr",
-        "english": "two"
+        "english": "two",
+        "audioPath": "audio/numbers-02.mp3"
       },
       {
         "id": "numbers-03",
         "sectionId": "numbers",
         "hanzi": "三",
         "pinyin": "sān",
-        "english": "three"
+        "english": "three",
+        "audioPath": "audio/numbers-03.mp3"
       },
       {
         "id": "numbers-04",
         "sectionId": "numbers",
         "hanzi": "四",
         "pinyin": "sì",
-        "english": "four"
+        "english": "four",
+        "audioPath": "audio/numbers-04.mp3"
       },
       {
         "id": "numbers-05",
         "sectionId": "numbers",
         "hanzi": "五",
         "pinyin": "wǔ",
-        "english": "five"
+        "english": "five",
+        "audioPath": "audio/numbers-05.mp3"
       },
       {
         "id": "numbers-06",
         "sectionId": "numbers",
         "hanzi": "六",
         "pinyin": "liù",
-        "english": "six"
+        "english": "six",
+        "audioPath": "audio/numbers-06.mp3"
       },
       {
         "id": "numbers-07",
         "sectionId": "numbers",
         "hanzi": "七",
         "pinyin": "qī",
-        "english": "seven"
+        "english": "seven",
+        "audioPath": "audio/numbers-07.mp3"
       },
       {
         "id": "numbers-08",
         "sectionId": "numbers",
         "hanzi": "八",
         "pinyin": "bā",
-        "english": "eight"
+        "english": "eight",
+        "audioPath": "audio/numbers-08.mp3"
       },
       {
         "id": "numbers-09",
         "sectionId": "numbers",
         "hanzi": "九",
         "pinyin": "jiǔ",
-        "english": "nine"
+        "english": "nine",
+        "audioPath": "audio/numbers-09.mp3"
       },
       {
         "id": "numbers-10",
         "sectionId": "numbers",
         "hanzi": "十",
         "pinyin": "shí",
-        "english": "ten"
+        "english": "ten",
+        "audioPath": "audio/numbers-10.mp3"
       }
     ]
   },
@@ -370,21 +420,24 @@
         "sectionId": "animals",
         "hanzi": "狗",
         "pinyin": "gǒu",
-        "english": "dog"
+        "english": "dog",
+        "audioPath": "audio/animals-01.mp3"
       },
       {
         "id": "animals-02",
         "sectionId": "animals",
         "hanzi": "猫",
         "pinyin": "māo",
-        "english": "cat"
+        "english": "cat",
+        "audioPath": "audio/animals-02.mp3"
       },
       {
         "id": "animals-03",
         "sectionId": "animals",
         "hanzi": "鸟",
         "pinyin": "niǎo",
-        "english": "bird"
+        "english": "bird",
+        "audioPath": "audio/animals-03.mp3"
       }
     ]
   }

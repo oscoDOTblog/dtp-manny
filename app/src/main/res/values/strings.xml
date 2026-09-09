@@ -17,7 +17,9 @@
     <string name="placeholder_description">Placeholder illustration of mountains and a sun</string>
     <string name="show_info">Show meaning</string>
     <string name="hide_info">Hide meaning</string>
-    <string name="audio_unavailable">Audio unavailable in V1</string>
+    <string name="audio_unavailable">Audio unavailable</string>
+    <string name="play_pronunciation">Play pronunciation</string>
+    <string name="audio_error">Pronunciation audio is unavailable.</string>
     <string name="audio">Audio</string>
     <string name="load_error">Vocabulary could not be loaded.</string>
     <string name="retry">Try again</string>
