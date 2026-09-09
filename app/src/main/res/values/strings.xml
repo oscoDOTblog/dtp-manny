@@ -9,6 +9,7 @@
     <string name="back">Back to sections</string>
     <string name="previous">Previous</string>
     <string name="next">Next</string>
+    <string name="shuffle">Shuffle</string>
     <string name="flip">Flip card</string>
     <string name="front_hint">Tap to reveal</string>
     <string name="back_hint">Tap card to return to the image</string>

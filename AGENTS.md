@@ -16,7 +16,8 @@ Kotlin, Jetpack Compose, and Material 3.
 - Cards begin with a shared vector illustration (except 人, which uses a bundled
   retro person PNG), flip to Hanzi, and reveal
   Pinyin/English on request. Audio is visible but disabled. Previous/next controls
-  have boundaries; position and reveal state survive activity recreation.
+  have boundaries; a shuffle control randomizes the card order and restarts at the
+first card; position, order, and reveal state survive activity recreation.
 - `ui/theme/` provides light/dark themes and dynamic colors on supported devices.
 - Instrumentation tests cover bundled data, invalid JSON/data, and the learning
   flow including state restoration. No ViewModels, database, or network layer
