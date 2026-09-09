@@ -1,0 +1,391 @@
+[
+  {
+    "id": "radicals",
+    "title": "Chinese radicals",
+    "cards": [
+      {
+        "id": "radicals-01",
+        "sectionId": "radicals",
+        "hanzi": "人（亻）",
+        "pinyin": "rén",
+        "english": "person"
+      },
+      {
+        "id": "radicals-02",
+        "sectionId": "radicals",
+        "hanzi": "刀（刂）",
+        "pinyin": "dāo",
+        "english": "knife"
+      },
+      {
+        "id": "radicals-03",
+        "sectionId": "radicals",
+        "hanzi": "力",
+        "pinyin": "lì",
+        "english": "power"
+      },
+      {
+        "id": "radicals-04",
+        "sectionId": "radicals",
+        "hanzi": "又",
+        "pinyin": "yòu",
+        "english": "right hand; again"
+      },
+      {
+        "id": "radicals-05",
+        "sectionId": "radicals",
+        "hanzi": "口",
+        "pinyin": "kǒu",
+        "english": "mouth"
+      },
+      {
+        "id": "radicals-06",
+        "sectionId": "radicals",
+        "hanzi": "囗",
+        "pinyin": "wéi",
+        "english": "enclose"
+      },
+      {
+        "id": "radicals-07",
+        "sectionId": "radicals",
+        "hanzi": "土",
+        "pinyin": "tǔ",
+        "english": "earth"
+      },
+      {
+        "id": "radicals-08",
+        "sectionId": "radicals",
+        "hanzi": "夕",
+        "pinyin": "xī",
+        "english": "sunset"
+      },
+      {
+        "id": "radicals-09",
+        "sectionId": "radicals",
+        "hanzi": "大",
+        "pinyin": "dà",
+        "english": "big"
+      },
+      {
+        "id": "radicals-10",
+        "sectionId": "radicals",
+        "hanzi": "女",
+        "pinyin": "nǚ",
+        "english": "woman"
+      },
+      {
+        "id": "radicals-11",
+        "sectionId": "radicals",
+        "hanzi": "子",
+        "pinyin": "zǐ",
+        "english": "son"
+      },
+      {
+        "id": "radicals-12",
+        "sectionId": "radicals",
+        "hanzi": "寸",
+        "pinyin": "cùn",
+        "english": "inch"
+      },
+      {
+        "id": "radicals-13",
+        "sectionId": "radicals",
+        "hanzi": "小",
+        "pinyin": "xiǎo",
+        "english": "small"
+      },
+      {
+        "id": "radicals-14",
+        "sectionId": "radicals",
+        "hanzi": "工",
+        "pinyin": "gōng",
+        "english": "labor; work"
+      },
+      {
+        "id": "radicals-15",
+        "sectionId": "radicals",
+        "hanzi": "幺",
+        "pinyin": "yāo",
+        "english": "tiny; small"
+      },
+      {
+        "id": "radicals-16",
+        "sectionId": "radicals",
+        "hanzi": "弓",
+        "pinyin": "gōng",
+        "english": "bow"
+      },
+      {
+        "id": "radicals-17",
+        "sectionId": "radicals",
+        "hanzi": "心（忄）",
+        "pinyin": "xīn",
+        "english": "heart"
+      },
+      {
+        "id": "radicals-18",
+        "sectionId": "radicals",
+        "hanzi": "戈",
+        "pinyin": "gē",
+        "english": "dagger-axe"
+      },
+      {
+        "id": "radicals-19",
+        "sectionId": "radicals",
+        "hanzi": "手（扌）",
+        "pinyin": "shǒu",
+        "english": "hand"
+      },
+      {
+        "id": "radicals-20",
+        "sectionId": "radicals",
+        "hanzi": "日",
+        "pinyin": "rì",
+        "english": "sun"
+      },
+      {
+        "id": "radicals-21",
+        "sectionId": "radicals",
+        "hanzi": "月",
+        "pinyin": "yuè",
+        "english": "moon"
+      },
+      {
+        "id": "radicals-22",
+        "sectionId": "radicals",
+        "hanzi": "木",
+        "pinyin": "mù",
+        "english": "wood"
+      },
+      {
+        "id": "radicals-23",
+        "sectionId": "radicals",
+        "hanzi": "水（氵）",
+        "pinyin": "shuǐ",
+        "english": "water"
+      },
+      {
+        "id": "radicals-24",
+        "sectionId": "radicals",
+        "hanzi": "火（灬）",
+        "pinyin": "huǒ",
+        "english": "fire"
+      },
+      {
+        "id": "radicals-25",
+        "sectionId": "radicals",
+        "hanzi": "田",
+        "pinyin": "tián",
+        "english": "field"
+      },
+      {
+        "id": "radicals-26",
+        "sectionId": "radicals",
+        "hanzi": "目",
+        "pinyin": "mù",
+        "english": "eye"
+      },
+      {
+        "id": "radicals-27",
+        "sectionId": "radicals",
+        "hanzi": "示（礻）",
+        "pinyin": "shì",
+        "english": "show"
+      },
+      {
+        "id": "radicals-28",
+        "sectionId": "radicals",
+        "hanzi": "糸（纟）",
+        "pinyin": "mì",
+        "english": "fine silk"
+      },
+      {
+        "id": "radicals-29",
+        "sectionId": "radicals",
+        "hanzi": "耳",
+        "pinyin": "ěr",
+        "english": "ear"
+      },
+      {
+        "id": "radicals-30",
+        "sectionId": "radicals",
+        "hanzi": "衣（衤）",
+        "pinyin": "yī",
+        "english": "clothing"
+      },
+      {
+        "id": "radicals-31",
+        "sectionId": "radicals",
+        "hanzi": "言",
+        "pinyin": "yán",
+        "english": "speech"
+      },
+      {
+        "id": "radicals-32",
+        "sectionId": "radicals",
+        "hanzi": "贝",
+        "pinyin": "bèi",
+        "english": "cowrie shell"
+      },
+      {
+        "id": "radicals-33",
+        "sectionId": "radicals",
+        "hanzi": "走",
+        "pinyin": "zǒu",
+        "english": "walk"
+      },
+      {
+        "id": "radicals-34",
+        "sectionId": "radicals",
+        "hanzi": "足",
+        "pinyin": "zú",
+        "english": "foot"
+      },
+      {
+        "id": "radicals-35",
+        "sectionId": "radicals",
+        "hanzi": "钅",
+        "pinyin": "jīn",
+        "english": "gold"
+      },
+      {
+        "id": "radicals-36",
+        "sectionId": "radicals",
+        "hanzi": "门",
+        "pinyin": "mén",
+        "english": "door"
+      },
+      {
+        "id": "radicals-37",
+        "sectionId": "radicals",
+        "hanzi": "隹",
+        "pinyin": "zhuī",
+        "english": "short-tailed bird"
+      },
+      {
+        "id": "radicals-38",
+        "sectionId": "radicals",
+        "hanzi": "雨",
+        "pinyin": "yǔ",
+        "english": "rain"
+      },
+      {
+        "id": "radicals-39",
+        "sectionId": "radicals",
+        "hanzi": "饣（食）",
+        "pinyin": "shí",
+        "english": "eat"
+      },
+      {
+        "id": "radicals-40",
+        "sectionId": "radicals",
+        "hanzi": "马",
+        "pinyin": "mǎ",
+        "english": "horse"
+      }
+    ]
+  },
+  {
+    "id": "numbers",
+    "title": "Numbers",
+    "cards": [
+      {
+        "id": "numbers-01",
+        "sectionId": "numbers",
+        "hanzi": "一",
+        "pinyin": "yī",
+        "english": "one"
+      },
+      {
+        "id": "numbers-02",
+        "sectionId": "numbers",
+        "hanzi": "二",
+        "pinyin": "èr",
+        "english": "two"
+      },
+      {
+        "id": "numbers-03",
+        "sectionId": "numbers",
+        "hanzi": "三",
+        "pinyin": "sān",
+        "english": "three"
+      },
+      {
+        "id": "numbers-04",
+        "sectionId": "numbers",
+        "hanzi": "四",
+        "pinyin": "sì",
+        "english": "four"
+      },
+      {
+        "id": "numbers-05",
+        "sectionId": "numbers",
+        "hanzi": "五",
+        "pinyin": "wǔ",
+        "english": "five"
+      },
+      {
+        "id": "numbers-06",
+        "sectionId": "numbers",
+        "hanzi": "六",
+        "pinyin": "liù",
+        "english": "six"
+      },
+      {
+        "id": "numbers-07",
+        "sectionId": "numbers",
+        "hanzi": "七",
+        "pinyin": "qī",
+        "english": "seven"
+      },
+      {
+        "id": "numbers-08",
+        "sectionId": "numbers",
+        "hanzi": "八",
+        "pinyin": "bā",
+        "english": "eight"
+      },
+      {
+        "id": "numbers-09",
+        "sectionId": "numbers",
+        "hanzi": "九",
+        "pinyin": "jiǔ",
+        "english": "nine"
+      },
+      {
+        "id": "numbers-10",
+        "sectionId": "numbers",
+        "hanzi": "十",
+        "pinyin": "shí",
+        "english": "ten"
+      }
+    ]
+  },
+  {
+    "id": "animals",
+    "title": "Animals",
+    "cards": [
+      {
+        "id": "animals-01",
+        "sectionId": "animals",
+        "hanzi": "狗",
+        "pinyin": "gǒu",
+        "english": "dog"
+      },
+      {
+        "id": "animals-02",
+        "sectionId": "animals",
+        "hanzi": "猫",
+        "pinyin": "māo",
+        "english": "cat"
+      },
+      {
+        "id": "animals-03",
+        "sectionId": "animals",
+        "hanzi": "鸟",
+        "pinyin": "niǎo",
+        "english": "bird"
+      }
+    ]
+  }
+]

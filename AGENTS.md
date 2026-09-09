@@ -2,23 +2,24 @@
 
 ## Project and current implementation
 
-Manny (`dtp-manny`) is an Android project intended to become a Mandarin
-vocabulary flashcard app. It currently remains a Compose starter app; the V1
-requirements below describe planned behavior, not completed features.
+Manny (`dtp-manny`) is a local Mandarin vocabulary flashcard app built with
+Kotlin, Jetpack Compose, and Material 3.
 
 - One Android application module: `:app`; Gradle root project name: `Manny`.
 - Namespace and application ID: `party.debaucherytea.manny`.
-- `app/src/main/java/party/debaucherytea/manny/MainActivity.kt` contains the
-  launcher activity, edge-to-edge setup, a Scaffold, the `Hello Android!`
-  greeting, and a Compose preview.
-- `ui/theme/` in the same package contains `MannyTheme`, colors, and typography,
-  including light/dark themes and dynamic colors on supported devices.
-- `app/src/main/res/` contains starter strings, themes, launcher icons, and
-  backup/data extraction configuration. The manifest declares the launcher activity.
-- `app/src/test/` and `app/src/androidTest/` contain only starter arithmetic and
-  application-package tests. They do not validate flashcard behavior.
-- Flashcards, bundled vocabulary JSON, ViewModels, repositories, and learning
-  progress are not implemented yet.
+- `MainActivity.kt` creates the asset repository and hosts `MannyApp`.
+- `data/FlashcardRepository.kt` loads and validates UTF-8 JSON on the IO dispatcher.
+- `ui/` contains Navigation Compose routing, the section list, card navigation,
+  and a reusable animated flashcard. Loading failures offer a retry.
+- `app/src/main/assets/vocabulary.json` contains 40 radicals, 10 numbers, and 3
+  animals. Parenthesized radical variants are retained in the Hanzi field.
+- Cards begin with a shared vector illustration, flip to Hanzi, and reveal
+  Pinyin/English on request. Audio is visible but disabled. Previous/next controls
+  have boundaries; position and reveal state survive activity recreation.
+- `ui/theme/` provides light/dark themes and dynamic colors on supported devices.
+- Instrumentation tests cover bundled data, invalid JSON/data, and the learning
+  flow including state restoration. No ViewModels, database, or network layer
+  are currently needed or implemented.
 
 Inspect existing code first. Do not implement planned features unless requested.
 Do not introduce architecture for hypothetical future requirements.
@@ -37,6 +38,7 @@ Do not introduce architecture for hypothetical future requirements.
 | Java source/target compatibility | 11 |
 | Compose BOM | 2026.02.01 |
 | AndroidX Core / Core KTX | 1.19.0 |
+| Navigation Compose | 2.9.7 |
 
 Treat `app/build.gradle.kts`, `gradle/libs.versions.toml`,
 `gradle/wrapper/gradle-wrapper.properties`, and
@@ -49,14 +51,14 @@ and minimum SDK changes intentional and independent; raising compile SDK does no
 require changing the other two. Use the repository Gradle wrapper for checks.
 Keep machine-specific SDK paths in local configuration, not shared instructions.
 
-## Planned V1 product behavior
+## V1 product behavior
 
-The intended learning interaction is:
+The learning interaction is:
 
 Image → recall concept → reveal Hanzi → optionally reveal Pinyin/English
 
 V1 targets Android phones and local vocabulary loaded from bundled JSON assets.
-Planned features are vocabulary sections, a placeholder image, flashcard
+Implemented features are vocabulary sections, a placeholder image, flashcard
 front/back, Hanzi reveal, optional Pinyin/English reveal, card navigation, and a
 progress indicator. Hanzi should be visually prominent on the card back;
 Pinyin and English stay hidden until explicitly requested by the learner.
@@ -68,7 +70,7 @@ abstractions for these future capabilities.
 ### Vocabulary requirements
 
 A flashcard represents a Mandarin word or expression, not necessarily one Chinese
-character. Its planned core fields are `id`, `sectionId`, `hanzi`, `pinyin`, and
+character. Its core fields are `id`, `sectionId`, `hanzi`, `pinyin`, and
 `english`. Future `imageUrl` and `audioUrl` fields must remain optional so cards
 work when generated media is unavailable.
 
@@ -113,7 +115,6 @@ work when generated media is unavailable.
 - Give important images and icons meaningful content descriptions and interactive
   controls appropriate touch targets.
 - Keep new user-facing text in Android string resources and design for localization.
-  The starter greeting is existing scaffold code, not a convention to copy.
 
 ## Testing and verification
 
@@ -132,7 +133,7 @@ Run checks appropriate to the change from the repository root:
   running emulator: `./gradlew :app:connectedDebugAndroidTest`
 
 Fix failures introduced by the change and report checks actually run, including
-any device/environment limitations. Starter tests are not feature coverage.
+any device/environment limitations. Do not confuse starter tests with feature coverage.
 Documentation-only changes require a content/diff review, not a build.
 
 ## Documentation

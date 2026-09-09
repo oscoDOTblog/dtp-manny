@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Manny</string>
+    <string name="library_heading">A little Mandarin,\nevery day.</string>
+    <string name="library_subtitle">Choose a section. Look, recall, then reveal.</string>
+    <string name="library_label">YOUR VOCABULARY</string>
+    <string name="card_count">%1$d cards</string>
+    <string name="position">%1$d / %2$d</string>
+    <string name="back">Back to sections</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="flip">Flip card</string>
+    <string name="front_hint">Tap to reveal</string>
+    <string name="back_hint">Tap card to return to the image</string>
+    <string name="recall_prompt">What comes to mind?</string>
+    <string name="placeholder_description">Placeholder illustration of mountains and a sun</string>
+    <string name="show_info">Show meaning</string>
+    <string name="hide_info">Hide meaning</string>
+    <string name="audio_unavailable">Audio unavailable in V1</string>
+    <string name="audio">Audio</string>
+    <string name="load_error">Vocabulary could not be loaded.</string>
+    <string name="retry">Try again</string>
+    <string name="empty_sections">No vocabulary sections yet.</string>
+    <string name="empty_cards">No cards in this section yet.</string>
+    <string name="offline_note">Learn at your pace · Available offline</string>
 </resources>
