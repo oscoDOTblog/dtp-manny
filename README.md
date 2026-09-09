@@ -19,8 +19,9 @@ on its front. Audio is visibly disabled for V1.
 The supplied material was three screenshots, not a PDF file. Parenthesized radical
 variants are retained in `hanzi`; source tone marks and English glosses are preserved.
 The enclosure radical 囗 is distinct from mouth 口. Source footnote markers are
-not vocabulary. All cards reuse `flashcard_placeholder.xml`; the illustration is
-not a word-specific clue in V1.
+not vocabulary. The 人 card (`radicals-01`) uses a bundled retro 16-bit person illustration.
+Other cards reuse `flashcard_placeholder.xml`; those placeholders are not
+word-specific clues.
 
 The JSON is an array of `{id, title, cards}` sections. Each card has
 `{id, sectionId, hanzi, pinyin, english}`. IDs must be unique, text nonblank, and

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Manny</string>
+    <string name="flashcard_illustration_description">Retro pixel art illustration of %1$s</string>
     <string name="library_heading">A little Mandarin,\nevery day.</string>
     <string name="library_subtitle">Choose a section. Look, recall, then reveal.</string>
     <string name="library_label">YOUR VOCABULARY</string>

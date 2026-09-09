@@ -13,7 +13,8 @@ Kotlin, Jetpack Compose, and Material 3.
   and a reusable animated flashcard. Loading failures offer a retry.
 - `app/src/main/assets/vocabulary.json` contains 40 radicals, 10 numbers, and 3
   animals. Parenthesized radical variants are retained in the Hanzi field.
-- Cards begin with a shared vector illustration, flip to Hanzi, and reveal
+- Cards begin with a shared vector illustration (except 人, which uses a bundled
+  retro person PNG), flip to Hanzi, and reveal
   Pinyin/English on request. Audio is visible but disabled. Previous/next controls
   have boundaries; position and reveal state survive activity recreation.
 - `ui/theme/` provides light/dark themes and dynamic colors on supported devices.
