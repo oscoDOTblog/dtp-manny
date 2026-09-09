@@ -66,7 +66,7 @@ fun FlashcardFace(card: Flashcard, onPlayAudio: (() -> Unit)?) {
                     val audioDescription = stringResource(
                         if (onPlayAudio != null) R.string.play_pronunciation else R.string.audio_unavailable
                     )
-                    OutlinedButton(
+                    FilledTonalButton(
                         onClick = { onPlayAudio?.invoke() },
                         enabled = onPlayAudio != null,
                         modifier = Modifier.semantics { contentDescription = audioDescription }
