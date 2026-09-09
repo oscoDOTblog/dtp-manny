@@ -1,0 +1,149 @@
+# AGENTS.md
+
+## Project and current implementation
+
+Manny (`dtp-manny`) is an Android project intended to become a Mandarin
+vocabulary flashcard app. It currently remains a Compose starter app; the V1
+requirements below describe planned behavior, not completed features.
+
+- One Android application module: `:app`; Gradle root project name: `Manny`.
+- Namespace and application ID: `party.debaucherytea.manny`.
+- `app/src/main/java/party/debaucherytea/manny/MainActivity.kt` contains the
+  launcher activity, edge-to-edge setup, a Scaffold, the `Hello Android!`
+  greeting, and a Compose preview.
+- `ui/theme/` in the same package contains `MannyTheme`, colors, and typography,
+  including light/dark themes and dynamic colors on supported devices.
+- `app/src/main/res/` contains starter strings, themes, launcher icons, and
+  backup/data extraction configuration. The manifest declares the launcher activity.
+- `app/src/test/` and `app/src/androidTest/` contain only starter arithmetic and
+  application-package tests. They do not validate flashcard behavior.
+- Flashcards, bundled vocabulary JSON, ViewModels, repositories, and learning
+  progress are not implemented yet.
+
+Inspect existing code first. Do not implement planned features unless requested.
+Do not introduce architecture for hypothetical future requirements.
+
+## Build configuration
+
+| Setting | Current value |
+| --- | --- |
+| Compile SDK | 37, configured with `release(37)` |
+| Target SDK | 36 |
+| Minimum SDK | 30 |
+| Android Gradle Plugin | 9.2.1 |
+| Gradle wrapper | 9.4.1 |
+| Kotlin Compose plugin | 2.2.10 |
+| Gradle daemon JDK | 21 |
+| Java source/target compatibility | 11 |
+| Compose BOM | 2026.02.01 |
+| AndroidX Core / Core KTX | 1.19.0 |
+
+Treat `app/build.gradle.kts`, `gradle/libs.versions.toml`,
+`gradle/wrapper/gradle-wrapper.properties`, and
+`gradle/gradle-daemon-jvm.properties` as authoritative for these settings.
+Manage dependency versions through the version catalog and Compose BOM.
+The daemon JDK and Java source/target compatibility are separate settings.
+
+AndroidX Core 1.19.0 requires compile SDK 37 or later. Keep compile SDK, target SDK,
+and minimum SDK changes intentional and independent; raising compile SDK does not
+require changing the other two. Use the repository Gradle wrapper for checks.
+Keep machine-specific SDK paths in local configuration, not shared instructions.
+
+## Planned V1 product behavior
+
+The intended learning interaction is:
+
+Image → recall concept → reveal Hanzi → optionally reveal Pinyin/English
+
+V1 targets Android phones and local vocabulary loaded from bundled JSON assets.
+Planned features are vocabulary sections, a placeholder image, flashcard
+front/back, Hanzi reveal, optional Pinyin/English reveal, card navigation, and a
+progress indicator. Hanzi should be visually prominent on the card back;
+Pinyin and English stay hidden until explicitly requested by the learner.
+
+Do not add AI image generation, TTS, a backend, accounts, authentication, cloud
+synchronization, or networking unless explicitly requested. Avoid premature
+abstractions for these future capabilities.
+
+### Vocabulary requirements
+
+A flashcard represents a Mandarin word or expression, not necessarily one Chinese
+character. Its planned core fields are `id`, `sectionId`, `hanzi`, `pinyin`, and
+`english`. Future `imageUrl` and `audioUrl` fields must remain optional so cards
+work when generated media is unavailable.
+
+- Keep vocabulary separate from UI code; do not hardcode lists in Composables.
+- Use Simplified Chinese unless otherwise specified.
+- Store tone-marked Hanyu Pinyin, such as `gǒu`, `māo`, and `píngguǒ`, rather than
+  numbered tones such as `gou3`, `mao1`, or `ping2guo3`.
+- Pronunciation belongs to the word/expression and context; do not assume every
+  Hanzi has exactly one pronunciation.
+- Do not silently change existing Hanzi, Pinyin, or English definitions.
+
+## Engineering conventions
+
+- Use Kotlin, Jetpack Compose, and Material 3. Do not introduce XML layouts unless
+  explicitly requested; existing XML resources and manifest configuration are expected.
+- Prefer clarity, safety, maintainability, and simple solutions. Follow Kotlin
+  conventions, use explicit names, prefer `val`, and keep functions/files focused.
+- Prefer AndroidX dependencies and avoid deprecated APIs, unnecessary libraries,
+  inheritance, and abstractions. Do not add a DI framework unless requested.
+- Add ViewModels and repositories/services when they improve clarity and testability.
+  Keep business logic outside Composables and avoid oversized ViewModels.
+- Keep Composables small, declarative, and stateless where practical. Hoist state
+  to the lowest reasonable owner and expose immutable, read-only UI state.
+  UI events go up; state flows down. Keep mutable state and collections private.
+- Use `remember` for local UI state and `rememberSaveable` for appropriate state
+  that should survive recreation. Use Compose side effects intentionally.
+- Prefer coroutines and Flow for asynchronous work and lifecycle-aware collection
+  for UI flows; add supporting dependencies only when needed.
+- Keep parsing and expensive work out of Composables. Avoid unnecessary
+  recomposition, use lazy layouts with stable keys for large lists, and avoid
+  retaining Activity/Context references in long-lived objects.
+- Handle recoverable failures through appropriate UI state and user-friendly
+  errors. Do not silently fail or use broad catch blocks. Log useful diagnostics
+  without sensitive information.
+- Write production-ready, Play Store compliant code. Never commit secrets or API
+  keys or embed future service credentials in the app; use secure backend/environment
+  configuration when external services are explicitly added.
+
+## UI and accessibility
+
+- Follow Material 3 and respect system font scaling.
+- Give important images and icons meaningful content descriptions and interactive
+  controls appropriate touch targets.
+- Keep new user-facing text in Android string resources and design for localization.
+  The starter greeting is existing scaffold code, not a convention to copy.
+
+## Testing and verification
+
+Prioritize meaningful unit tests for business logic, parsing, transformations,
+and future ViewModels/repositories. Keep pure logic independent of Android where
+practical. Use `kotlinx-coroutines-test` when coroutine tests are introduced;
+it is not currently a declared dependency.
+
+Run checks appropriate to the change from the repository root:
+
+- App code or behavior changes:
+  `./gradlew :app:testDebugUnitTest :app:assembleDebug`
+- SDK or dependency changes:
+  `./gradlew :app:checkDebugAarMetadata :app:assembleDebug`
+- Instrumentation or Compose UI checks, with a compatible connected device or
+  running emulator: `./gradlew :app:connectedDebugAndroidTest`
+
+Fix failures introduced by the change and report checks actually run, including
+any device/environment limitations. Starter tests are not feature coverage.
+Documentation-only changes require a content/diff review, not a build.
+
+## Documentation
+
+`docs/PRODUCT.md`, `docs/ARCHITECTURE.md`, and `docs/ROADMAP.md` do not currently
+exist. When present, consult them for intended behavior, current architecture,
+and planned features respectively. Update applicable existing documents when
+behavior or architecture meaningfully changes; do not assume missing documents
+exist or create them solely to satisfy these references.
+
+Keep this file aligned with verified project configuration and clearly distinguish
+implemented behavior from plans. Do not mark roadmap items complete until they
+are implemented. Add brief comments explaining non-obvious decisions rather than
+obvious code, use KDoc where public APIs benefit, and explain meaningful tradeoffs.
