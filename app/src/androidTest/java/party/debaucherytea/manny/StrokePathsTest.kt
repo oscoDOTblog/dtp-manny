@@ -32,15 +32,22 @@ class StrokePathsTest {
 
     @Test fun transformCentersSquareCanvas() {
         val matrix = strokeTransform(300f, 300f)
-        assertMaps(matrix, 0f, 0f, 0f, 0f)
-        assertMaps(matrix, 900f, 900f, 300f, 300f)
+        assertMaps(matrix, 0f, 0f, 0f, 300f)
+        assertMaps(matrix, 900f, 900f, 300f, 0f)
         assertMaps(matrix, 450f, 450f, 150f, 150f)
+    }
+
+    @Test fun transformFlipsUpstreamYUpToCanvasYDown() {
+        // A top-starting upstream stroke (high y, e.g. 狗's first median at
+        // y ~767) must land near the top of the canvas (small y).
+        val matrix = strokeTransform(300f, 300f)
+        assertMaps(matrix, 362f, 767f, 362f / 3f, (900f - 767f) / 3f)
     }
 
     @Test fun transformPreservesAspectOnWideCanvas() {
         val matrix = strokeTransform(600f, 300f)
-        assertMaps(matrix, 0f, 0f, 150f, 0f)
-        assertMaps(matrix, 900f, 900f, 450f, 300f)
+        assertMaps(matrix, 0f, 0f, 150f, 300f)
+        assertMaps(matrix, 900f, 900f, 450f, 0f)
     }
 
     private fun assertMaps(matrix: android.graphics.Matrix, x: Float, y: Float, ex: Float, ey: Float) {

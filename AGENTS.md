@@ -21,7 +21,8 @@ Kotlin, Jetpack Compose, and Material 3.
   THIRD_PARTY_NOTICES.md). AssetStrokeDataRepository loads with an in-memory
   cache (missing is null, corrupt is an error); StrokePaths converts SVG
   stroke strings via AndroidX PathParser with an isolated 900-space
-  centering transform. HanziStrokeView renders the first `shownStrokes`
+  y-flipping centering transform (upstream data is y-up, canvas is y-down).
+  HanziStrokeView renders the first `shownStrokes`
   strokes on Canvas (theme-aware fill, paths parsed once, optional
   partially-drawn current stroke via PathMeasure segments);
   StrokeProgressionControls provides Previous/Next/Reset with an n/total

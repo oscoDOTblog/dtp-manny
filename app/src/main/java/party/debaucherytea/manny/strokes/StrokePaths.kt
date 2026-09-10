@@ -28,14 +28,18 @@ fun parseStrokePaths(data: HanziStrokeData): List<Path> = data.strokes.map(::par
 /**
  * Scales the 900x900 stroke space into a [width] by [height] area,
  * preserving aspect ratio and centering the character.
+ *
+ * Upstream coordinates are y-up (origin bottom-left, as in font data) while
+ * the canvas is y-down, so the transform also flips vertically -- the same
+ * scale(1, -1) flip Hanzi Writer itself applies when rendering.
  */
 fun strokeTransform(width: Float, height: Float): Matrix {
     val scale = minOf(width, height) / STROKE_SPACE
     return Matrix().apply {
-        setScale(scale, scale)
+        setScale(scale, -scale)
         postTranslate(
             (width - STROKE_SPACE * scale) / 2f,
-            (height - STROKE_SPACE * scale) / 2f
+            (height - STROKE_SPACE * scale) / 2f + STROKE_SPACE * scale
         )
     }
 }
