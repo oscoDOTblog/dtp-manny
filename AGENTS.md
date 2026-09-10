@@ -24,7 +24,7 @@ Kotlin, Jetpack Compose, and Material 3.
   y-flipping centering transform (upstream data is y-up, canvas is y-down).
   HanziStrokeView renders the first `shownStrokes`
   strokes on Canvas (theme-aware fill, paths parsed once, optional
-  partially-drawn current stroke via PathMeasure segments);
+  active stroke traced along its median centerline);
   StrokeProgressionControls provides Previous/Next/Reset with an n/total
   readout. StrokeOrderSheet hosts autoplaying draw animation with
   pause/resume/restart in a bottom sheet (loading/missing/ready states) plus

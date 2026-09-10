@@ -2,7 +2,6 @@ package party.debaucherytea.manny.ui
 
 import android.graphics.Paint
 import android.graphics.Path
-import android.graphics.PathMeasure
 import androidx.compose.foundation.Canvas
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -15,14 +14,18 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import party.debaucherytea.manny.R
 import party.debaucherytea.manny.strokes.HanziStrokeData
+import party.debaucherytea.manny.strokes.STROKE_TRACE_WIDTH
 import party.debaucherytea.manny.strokes.parseStrokePaths
 import party.debaucherytea.manny.strokes.strokeTransform
+import party.debaucherytea.manny.strokes.traceMedian
 
 /**
  * Renders the first [shownStrokes] of [data] simultaneously (all of them by
- * default). When [currentProgress] is provided, the next stroke is revealed
- * progressively, as if being drawn. Strokes are filled outlines drawn in the
- * theme's on-surface color; paths are parsed once per [data], never per frame.
+ * default). When [currentProgress] is provided, the next stroke is traced
+ * along its median centerline from start to end point -- finished strokes
+ * are filled outlines, the active one a growing round-capped line. Strokes
+ * draw in the theme's on-surface color; paths are parsed once per [data],
+ * never per frame.
  *
  * The caller supplies sizing (e.g. a square aspect); the character is
  * centered with its aspect ratio preserved.
@@ -38,22 +41,29 @@ fun HanziStrokeView(
     val fullCount = shownStrokes.coerceIn(0, paths.size)
     val visible = paths.take(fullCount)
     val paint = remember { Paint().apply { style = Paint.Style.FILL; isAntiAlias = true } }
-    // Reused every frame so animation never allocates paths.
-    val measure = remember { PathMeasure() }
-    val segment = remember { Path() }
+    // Reused every frame so animation never allocates.
+    val trace = remember { Path() }
+    val tracePaint = remember {
+        Paint().apply {
+            style = Paint.Style.STROKE
+            strokeWidth = STROKE_TRACE_WIDTH
+            strokeCap = Paint.Cap.ROUND
+            strokeJoin = Paint.Join.ROUND
+            isAntiAlias = true
+        }
+    }
     val glyphColor = MaterialTheme.colorScheme.onSurface
     val description = stringResource(R.string.stroke_diagram_description, data.character)
     Canvas(modifier.semantics { contentDescription = description }) {
         paint.color = glyphColor.toArgb()
+        tracePaint.color = glyphColor.toArgb()
         with(drawContext.canvas.nativeCanvas) {
             save()
             concat(strokeTransform(size.width, size.height))
             visible.forEach { drawPath(it, paint) }
-            if (currentProgress != null && fullCount < paths.size) {
-                segment.rewind()
-                measure.setPath(paths[fullCount], false)
-                measure.getSegment(0f, measure.length * currentProgress.coerceIn(0f, 1f), segment, true)
-                drawPath(segment, paint)
+            if (currentProgress != null && fullCount < data.medians.size) {
+                traceMedian(data.medians[fullCount], currentProgress.coerceIn(0f, 1f), trace)
+                drawPath(trace, tracePaint)
             }
             restore()
         }

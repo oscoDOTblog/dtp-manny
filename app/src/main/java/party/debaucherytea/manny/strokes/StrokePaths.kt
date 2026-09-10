@@ -7,6 +7,59 @@ import androidx.core.graphics.PathParser
 /** Hanzi Writer stroke data lives in a 900x900 SVG-like coordinate space. */
 const val STROKE_SPACE = 900f
 
+/** Width of the animated centerline trace, in stroke-space units. */
+const val STROKE_TRACE_WIDTH = 32f
+
+/**
+ * Traces the first [progress] fraction of a stroke's median centerline into
+ * [out] (rewound first, so callers can reuse one Path across frames).
+ *
+ * Unlike the filled outline paths, the median runs strictly from the
+ * stroke's start point to its end point, so the trace grows in one
+ * direction and never doubles back.
+ */
+fun traceMedian(points: List<StrokePoint>, progress: Float, out: Path) {
+    out.rewind()
+    if (points.isEmpty()) return
+    out.moveTo(points[0].x, points[0].y)
+    if (points.size == 1) {
+        // Degenerate median: a round-capped zero-length line renders as a dot.
+        if (progress > 0f) out.lineTo(points[0].x, points[0].y)
+        return
+    }
+    var remaining = progress.coerceIn(0f, 1f) * points.totalLength()
+    var index = 1
+    while (index < points.size && remaining > 0f) {
+        val previous = points[index - 1]
+        val current = points[index]
+        val segment = current.distanceTo(previous)
+        if (remaining >= segment) {
+            out.lineTo(current.x, current.y)
+            remaining -= segment
+        } else {
+            val fraction = remaining / segment
+            out.lineTo(
+                previous.x + (current.x - previous.x) * fraction,
+                previous.y + (current.y - previous.y) * fraction
+            )
+            remaining = 0f
+        }
+        index++
+    }
+}
+
+private fun List<StrokePoint>.totalLength(): Float {
+    var total = 0f
+    for (index in 1 until size) total += this[index].distanceTo(this[index - 1])
+    return total
+}
+
+private fun StrokePoint.distanceTo(other: StrokePoint): Float {
+    val dx = x - other.x
+    val dy = y - other.y
+    return kotlin.math.sqrt(dx * dx + dy * dy)
+}
+
 /**
  * Parses one Hanzi Writer SVG stroke path into an Android [Path].
  *
