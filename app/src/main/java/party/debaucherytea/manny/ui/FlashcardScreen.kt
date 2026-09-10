@@ -14,13 +14,21 @@ import kotlinx.coroutines.launch
 import party.debaucherytea.manny.R
 import party.debaucherytea.manny.audio.PronunciationPlayer
 import party.debaucherytea.manny.data.FlashcardSection
+import party.debaucherytea.manny.strokes.StrokeDataRepository
+import party.debaucherytea.manny.strokes.extractHanzi
 import java.io.IOException
 
 @Composable
-fun FlashcardScreen(section: FlashcardSection?, player: PronunciationPlayer, onBack: () -> Unit) {
+fun FlashcardScreen(
+    section: FlashcardSection?,
+    player: PronunciationPlayer,
+    strokeRepository: StrokeDataRepository,
+    onBack: () -> Unit
+) {
     val cardCount = section?.cards?.size ?: 0
     var index by rememberSaveable(section?.id) { mutableIntStateOf(0) }
     var order by rememberSaveable(section?.id) { mutableStateOf((0 until cardCount).toList()) }
+    var strokeSheetChars by remember { mutableStateOf<List<String>?>(null) }
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
     val audioErrorMessage = stringResource(R.string.audio_error)
@@ -61,6 +69,11 @@ fun FlashcardScreen(section: FlashcardSection?, player: PronunciationPlayer, onB
                 }
             }
             LinearProgressIndicator(progress = { (safeIndex + 1).toFloat() / section.cards.size }, modifier = Modifier.fillMaxWidth())
+            // Characters with stroke data enable the stroke-order sheet; the
+            // check reruns per card and stays disabled while loading.
+            val supportedStrokes by produceState<List<String>?>(null, card.id) {
+                value = extractHanzi(card.hanzi).filter { strokeRepository.load(it) != null }
+            }
             // A new card always begins on its image side with the meaning hidden.
             key(card.id) {
                 FlashcardFace(
@@ -75,6 +88,9 @@ fun FlashcardScreen(section: FlashcardSection?, player: PronunciationPlayer, onB
                                 }
                             }
                         }
+                    },
+                    onStrokeOrder = supportedStrokes?.takeIf { it.isNotEmpty() }?.let { chars ->
+                        { strokeSheetChars = chars }
                     }
                 )
             }
@@ -85,6 +101,13 @@ fun FlashcardScreen(section: FlashcardSection?, player: PronunciationPlayer, onB
                 Button(onClick = { index = safeIndex + 1 }, enabled = safeIndex < section.cards.lastIndex, modifier = Modifier.weight(1f)) {
                     Text(stringResource(R.string.next))
                 }
+            }
+            strokeSheetChars?.takeIf { it.isNotEmpty() }?.let { chars ->
+                StrokeOrderSheet(
+                    characters = chars,
+                    repository = strokeRepository,
+                    onDismiss = { strokeSheetChars = null }
+                )
             }
         }
         }

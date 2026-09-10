@@ -12,6 +12,7 @@ import androidx.navigation.compose.*
 import party.debaucherytea.manny.R
 import party.debaucherytea.manny.audio.PronunciationPlayer
 import party.debaucherytea.manny.data.*
+import party.debaucherytea.manny.strokes.StrokeDataRepository
 import java.io.IOException
 import org.json.JSONException
 
@@ -22,7 +23,11 @@ private sealed interface LibraryState {
 }
 
 @Composable
-fun MannyApp(repository: FlashcardRepository, player: PronunciationPlayer) {
+fun MannyApp(
+    repository: FlashcardRepository,
+    player: PronunciationPlayer,
+    strokeRepository: StrokeDataRepository
+) {
     var attempt by remember { mutableIntStateOf(0) }
     val state by produceState<LibraryState>(LibraryState.Loading, repository, attempt) {
         value = LibraryState.Loading
@@ -50,13 +55,17 @@ fun MannyApp(repository: FlashcardRepository, player: PronunciationPlayer) {
                 Text(stringResource(R.string.load_error))
                 Button(onClick = { attempt++ }) { Text(stringResource(R.string.retry)) }
             }
-            is LibraryState.Ready -> LibraryNavigation(current.sections, player)
+            is LibraryState.Ready -> LibraryNavigation(current.sections, player, strokeRepository)
         }
     }
 }
 
 @Composable
-private fun LibraryNavigation(sections: List<FlashcardSection>, player: PronunciationPlayer) {
+private fun LibraryNavigation(
+    sections: List<FlashcardSection>,
+    player: PronunciationPlayer,
+    strokeRepository: StrokeDataRepository
+) {
     val navController = rememberNavController()
     NavHost(navController, startDestination = "sections") {
         composable("sections") {
@@ -66,7 +75,7 @@ private fun LibraryNavigation(sections: List<FlashcardSection>, player: Pronunci
         }
         composable("cards/{sectionId}") { entry ->
             val section = sections.find { it.id == entry.arguments?.getString("sectionId") }
-            FlashcardScreen(section, player, onBack = { navController.popBackStack() })
+            FlashcardScreen(section, player, strokeRepository, onBack = { navController.popBackStack() })
         }
     }
 }

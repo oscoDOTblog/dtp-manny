@@ -17,6 +17,14 @@
     <string name="placeholder_description">Placeholder illustration of mountains and a sun</string>
     <string name="show_info">Show meaning</string>
     <string name="hide_info">Hide meaning</string>
+    <string name="stroke_diagram_description">Stroke diagram for %1$s</string>
+    <string name="stroke_reset">Reset</string>
+    <string name="stroke_order_title">Stroke order</string>
+    <string name="stroke_play">Play</string>
+    <string name="stroke_pause">Pause</string>
+    <string name="stroke_missing">No stroke data for this character.</string>
+    <string name="strokes">Strokes</string>
+    <string name="show_stroke_order">Show stroke order</string>
     <string name="audio_unavailable">Audio unavailable</string>
     <string name="play_pronunciation">Play pronunciation</string>
     <string name="audio_error">Pronunciation audio is unavailable.</string>

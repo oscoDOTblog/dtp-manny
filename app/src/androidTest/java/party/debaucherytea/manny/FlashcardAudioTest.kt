@@ -9,9 +9,15 @@ import org.junit.runner.RunWith
 import party.debaucherytea.manny.audio.PronunciationPlayer
 import party.debaucherytea.manny.data.Flashcard
 import party.debaucherytea.manny.data.FlashcardSection
+import party.debaucherytea.manny.strokes.HanziStrokeData
+import party.debaucherytea.manny.strokes.StrokeDataRepository
 import party.debaucherytea.manny.ui.FlashcardScreen
 import party.debaucherytea.manny.ui.theme.MannyTheme
 import java.io.IOException
+
+private object NoStrokes : StrokeDataRepository {
+    override suspend fun load(character: String): HanziStrokeData? = null
+}
 
 private class FakePlayer(var fail: Boolean = false) : PronunciationPlayer {
     val played = mutableListOf<String>()
@@ -37,7 +43,7 @@ class FlashcardAudioTest {
     @get:Rule val compose = createComposeRule()
 
     private fun show(player: FakePlayer, section: FlashcardSection) {
-        compose.setContent { MannyTheme { FlashcardScreen(section, player, onBack = {}) } }
+        compose.setContent { MannyTheme { FlashcardScreen(section, player, NoStrokes, onBack = {}) } }
     }
 
     @Test fun audioButtonIsDisabledWithoutAudioPath() {

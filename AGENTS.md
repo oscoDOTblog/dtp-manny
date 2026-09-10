@@ -15,6 +15,21 @@ Kotlin, Jetpack Compose, and Material 3.
   MediaPlayer implementation. The flashcard 🔊 button plays `audioPath` when
   present and stays disabled otherwise; playback stops when leaving a section
   and resources are released with the Activity.
+- `strokes/` holds the HanziStrokeData/StrokePoint models, strict schema
+  parsing, and the StrokeDataRepository interface. `assets/strokes/` has
+  imported U+XXXX.json data for all 63 vocabulary Hanzi (Arphic-licensed, see
+  THIRD_PARTY_NOTICES.md). AssetStrokeDataRepository loads with an in-memory
+  cache (missing is null, corrupt is an error); StrokePaths converts SVG
+  stroke strings via AndroidX PathParser with an isolated 900-space
+  centering transform. HanziStrokeView renders the first `shownStrokes`
+  strokes on Canvas (theme-aware fill, paths parsed once, optional
+  partially-drawn current stroke via PathMeasure segments);
+  StrokeProgressionControls provides Previous/Next/Reset with an n/total
+  readout. StrokeOrderSheet hosts autoplaying draw animation with
+  pause/resume/restart in a bottom sheet (loading/missing/ready states) plus
+  a FilterChip selector for multi-character cards. The flashcard back has a
+  full-width Strokes button, enabled when at least one card character has
+  data (checked per card via extractHanzi + repository).
 - `app/src/main/assets/vocabulary.json` contains 40 radicals, 10 numbers, and 3
   animals. Parenthesized radical variants are retained in the Hanzi field.
 - Cards begin with a shared vector illustration (except 人, which uses a bundled

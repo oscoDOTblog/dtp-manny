@@ -6,17 +6,19 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import party.debaucherytea.manny.audio.AssetPronunciationPlayer
 import party.debaucherytea.manny.data.FlashcardRepository
+import party.debaucherytea.manny.strokes.AssetStrokeDataRepository
 import party.debaucherytea.manny.ui.MannyApp
 import party.debaucherytea.manny.ui.theme.MannyTheme
 
 class MainActivity : ComponentActivity() {
     private val pronunciationPlayer by lazy { AssetPronunciationPlayer(this) }
+    private val strokeRepository by lazy { AssetStrokeDataRepository(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val repository = FlashcardRepository(applicationContext.assets)
-        setContent { MannyTheme { MannyApp(repository, pronunciationPlayer) } }
+        setContent { MannyTheme { MannyApp(repository, pronunciationPlayer, strokeRepository) } }
     }
 
     override fun onDestroy() {
