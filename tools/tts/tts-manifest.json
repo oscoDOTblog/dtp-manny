@@ -1,0 +1,532 @@
+{
+  "animals-01": {
+    "hanzi": "狗",
+    "file": "audio/animals-01.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "a343c3c1198541730fe8412892723df5f6bccd9e58b1fe911beccb6cf8557ff0"
+  },
+  "radicals-01": {
+    "hanzi": "人（亻）",
+    "file": "audio/radicals-01.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "02ddd8d9f110aa7afdb87afdf4879ea8083f84a53051b49225071867eb378192"
+  },
+  "radicals-02": {
+    "hanzi": "刀（刂）",
+    "file": "audio/radicals-02.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "415cb833296d3064b390a0b3af7db80d6772dc41395f2286fb514023baf09b45"
+  },
+  "radicals-03": {
+    "hanzi": "力",
+    "file": "audio/radicals-03.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "997379fb4e6479e379a3471b491b0bdcf529cbb494baf60e0c0edef7ebfe3bad"
+  },
+  "radicals-04": {
+    "hanzi": "又",
+    "file": "audio/radicals-04.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "ae7b6e3b0eb90e6d96e68f5ebbe2ffe3b3ca25aa0e65f1f47868f037487b7a24"
+  },
+  "radicals-05": {
+    "hanzi": "口",
+    "file": "audio/radicals-05.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "e2abbbd93446184219fc239aed2d23eb26e2c5473d5db2fcf97eef7c452a5406"
+  },
+  "radicals-06": {
+    "hanzi": "囗",
+    "file": "audio/radicals-06.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "701fe60dbc53118378d1cc34f087256ee94f55b6e1eb1ee561750898bcd30ff1"
+  },
+  "radicals-07": {
+    "hanzi": "土",
+    "file": "audio/radicals-07.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "50facd3f16a67fd7af2f0d1fa1c205dbac0b4a397780926938a21b51b510cdba"
+  },
+  "radicals-08": {
+    "hanzi": "夕",
+    "file": "audio/radicals-08.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "cc7c176b4b3199eb3e3447a6ebafeae7f5419dc6ef2d1f1ca8fcaabe34bd435d"
+  },
+  "radicals-09": {
+    "hanzi": "大",
+    "file": "audio/radicals-09.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "2bbb6543bacaf52dc8e0e6720103435f42e02ff7288489966f28a29f0eb0459b"
+  },
+  "radicals-10": {
+    "hanzi": "女",
+    "file": "audio/radicals-10.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "a5a7b4c76a6b2157b28f9f1460abfb2d2af2f26de23948c9a5e61ba5ae896e36"
+  },
+  "radicals-11": {
+    "hanzi": "子",
+    "file": "audio/radicals-11.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "36bb610251fbe27353e51a82d8eb7fbf2e1cb9e01ec9e69c3cd888e8d8bbb6d7"
+  },
+  "radicals-12": {
+    "hanzi": "寸",
+    "file": "audio/radicals-12.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "eb088a69cd7847e7c5d38ce41c3bd0be862040c8836c9fbcbd6505d872b8032c"
+  },
+  "radicals-13": {
+    "hanzi": "小",
+    "file": "audio/radicals-13.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "8c61db7008d7fddc6f9a87e81a71b109601ea2e6ca996dcae9fcc94d0932b81b"
+  },
+  "radicals-14": {
+    "hanzi": "工",
+    "file": "audio/radicals-14.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "c49ad58528184822b2d2f1d9dcb3242d872ae66dc24050bef5ba476c4fa70e3c"
+  },
+  "radicals-15": {
+    "hanzi": "幺",
+    "file": "audio/radicals-15.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "33175193c5f0e65542108c3853f0ae9c9f6d49c265a300a5dd508e64596d2143"
+  },
+  "radicals-16": {
+    "hanzi": "弓",
+    "file": "audio/radicals-16.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "1acb5915a08f1f575d5536d73f89452ac3f9770a3e649591406bee65bb161613"
+  },
+  "radicals-17": {
+    "hanzi": "心（忄）",
+    "file": "audio/radicals-17.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "444f0024af529fc64de7874b3670d86cc14b077bcf0b10ecd2e0bb351e45f453"
+  },
+  "radicals-18": {
+    "hanzi": "戈",
+    "file": "audio/radicals-18.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "1f5f9936066b070c9428d571809db90a8986a73a9ec3f25dbf84dae412aa7b3d"
+  },
+  "radicals-19": {
+    "hanzi": "手（扌）",
+    "file": "audio/radicals-19.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "ce62d37d541432d8c7cf217e7b2ab70bf2a6b23c451514ac816a102c86795594"
+  },
+  "radicals-20": {
+    "hanzi": "日",
+    "file": "audio/radicals-20.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "5e8f33223c74ee9de0c5b1670742f16cdd747ac4700971e8626a6d6226f6e8ba"
+  },
+  "radicals-21": {
+    "hanzi": "月",
+    "file": "audio/radicals-21.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "25edb9eed69ae80134023e47f41f20e6503821a8e75d0cc2edb72aa011d17f5d"
+  },
+  "radicals-22": {
+    "hanzi": "木",
+    "file": "audio/radicals-22.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "0b834d947ed025d53f7a15052edd0a7a5abbd6a2987160d415045e95b72789e1"
+  },
+  "radicals-23": {
+    "hanzi": "水（氵）",
+    "file": "audio/radicals-23.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "06b99b86cd7b2bb1dc113607ca9ec2bb2d6b63689d0e5009838de53ec2485597"
+  },
+  "radicals-24": {
+    "hanzi": "火（灬）",
+    "file": "audio/radicals-24.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "08f36afc7bd578c81881ca1c6a5db66d892a8e6f0c1215f9b705c530eccb61f7"
+  },
+  "radicals-25": {
+    "hanzi": "田",
+    "file": "audio/radicals-25.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "c57621c0173189bf90bf2e5325627fc0925662634b1037accc4df3cae87eeaf5"
+  },
+  "radicals-26": {
+    "hanzi": "目",
+    "file": "audio/radicals-26.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "52ddb49af8b5bbc1c3e1c1246e053f366efb13002e1dc2dc7d3a1c3e049936fe"
+  },
+  "radicals-27": {
+    "hanzi": "示（礻）",
+    "file": "audio/radicals-27.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "7572f187ad6685042f8097db39125934dc038d213467fdba41d629ea3f09a697"
+  },
+  "radicals-28": {
+    "hanzi": "糸（纟）",
+    "file": "audio/radicals-28.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "83ff2431f2a21a4896e07d16118b8bc83c73ca64d4a04dcfd024c6e7a51b9309"
+  },
+  "radicals-29": {
+    "hanzi": "耳",
+    "file": "audio/radicals-29.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "079f7041b34545414a7725c4bf10e477c1f02ec42dc16f0ed3e3e30b413ca45e"
+  },
+  "radicals-30": {
+    "hanzi": "衣（衤）",
+    "file": "audio/radicals-30.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "fef31d2b4d1a2e228d3163b91da104f0831257357ec310dbfbc1a47d829a0a78"
+  },
+  "radicals-31": {
+    "hanzi": "言",
+    "file": "audio/radicals-31.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "f354316eb0e94cce007dc8c698083538a5f82178e9bb45fd071daa00b70c84eb"
+  },
+  "radicals-32": {
+    "hanzi": "贝",
+    "file": "audio/radicals-32.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "56752459ca1af7fcd4dfa6b211840795e3ab5605df5c81191fdf7036a676fee4"
+  },
+  "radicals-33": {
+    "hanzi": "走",
+    "file": "audio/radicals-33.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "5925d44c00fcfb19f9099598feb71b4ea084e81a755e2cf8df3f469794c96469"
+  },
+  "radicals-34": {
+    "hanzi": "足",
+    "file": "audio/radicals-34.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "24e97d162d6c45bd96901294eaf9345dc9a9853448506b480a01b8ffd9ea8db0"
+  },
+  "radicals-35": {
+    "hanzi": "钅",
+    "file": "audio/radicals-35.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "28b0608251e628087dc56b7aa4b95d66181ddfe650974650c726e1e2843231a7"
+  },
+  "radicals-36": {
+    "hanzi": "门",
+    "file": "audio/radicals-36.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "579774da1897a4c9ed1840ae1eb1dff750daf34f10186600725013bee22bde65"
+  },
+  "radicals-37": {
+    "hanzi": "隹",
+    "file": "audio/radicals-37.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "52e895dc7d6b7db83d9c033bdffc2be246b3baf64500f4cef17f848526bbbdac"
+  },
+  "radicals-38": {
+    "hanzi": "雨",
+    "file": "audio/radicals-38.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "ea058da940b4a16725a95fe109307a97f2938da2cd608d374d3082373e42eaec"
+  },
+  "radicals-39": {
+    "hanzi": "饣（食）",
+    "file": "audio/radicals-39.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "4feb927571e585331b0049b14edb8fe49ef3dfc587dc337cd1907ffb0a97f8b6"
+  },
+  "radicals-40": {
+    "hanzi": "马",
+    "file": "audio/radicals-40.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "1e322863f5a4a5ee10c97668bc4827b92ca0e0b451a9a628ff6025f30607aef4"
+  },
+  "numbers-01": {
+    "hanzi": "一",
+    "file": "audio/numbers-01.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "50cb8e55470398558b4936ad2c7401348b7b196755d10bd1eebf3abb37690ff5"
+  },
+  "numbers-02": {
+    "hanzi": "二",
+    "file": "audio/numbers-02.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "52de60375f7755c98d4596078db0f7f409308d413c785e6a1fab5c49f92c694d"
+  },
+  "numbers-03": {
+    "hanzi": "三",
+    "file": "audio/numbers-03.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "daeb357e2bf2976df50fa1fea506558e4668b9d78f5b993b511c81805a6abbae"
+  },
+  "numbers-04": {
+    "hanzi": "四",
+    "file": "audio/numbers-04.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "17c2f040d2a2e744e8e6bb047590ae1ba43ce280f56948beaca3f6528771a883"
+  },
+  "numbers-05": {
+    "hanzi": "五",
+    "file": "audio/numbers-05.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "5d90f88105902477e5bb643c1fca18ee17e9a1046d0bbd36c6093dde1665b32f"
+  },
+  "numbers-06": {
+    "hanzi": "六",
+    "file": "audio/numbers-06.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "4538ee7ba3a7e8f5679450f6eb03dd865a9280da9c127f8aa3818f15fdf4188b"
+  },
+  "numbers-07": {
+    "hanzi": "七",
+    "file": "audio/numbers-07.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "d7ededcf76bf1f43312c4589df3767e17c7f432245edf78570208519af19868f"
+  },
+  "numbers-08": {
+    "hanzi": "八",
+    "file": "audio/numbers-08.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "3286416d940ecb5764d1eb36658acfcdfc569770c6d0ca98198a5b4d7f0f727d"
+  },
+  "numbers-09": {
+    "hanzi": "九",
+    "file": "audio/numbers-09.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "4eac2a00806f4265304683cb054175270612f2b1a03b8e927b25c0adb565d8de"
+  },
+  "numbers-10": {
+    "hanzi": "十",
+    "file": "audio/numbers-10.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "ba4d2ba3fcdf3044405ed5ef0ca60c188dae0c27f16193dcda59fc0580c92232"
+  },
+  "animals-02": {
+    "hanzi": "猫",
+    "file": "audio/animals-02.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "4e0cf461ce7e65619eb949ed2d4b84f2b94fd3d04a35ed8d2aafb44968b6c959"
+  },
+  "animals-03": {
+    "hanzi": "鸟",
+    "file": "audio/animals-03.mp3",
+    "provider": "amazon-polly",
+    "voice": "Zhiyu",
+    "engine": "neural",
+    "language": "cmn-CN",
+    "format": "mp3",
+    "contentHash": "144e9ed037512214b1d732b1615318786f285bff614cb205fd34c81783918fdf"
+  }
+}
